@@ -12,9 +12,13 @@ function App() {
       email:"alice@gmail.com"
     })
   },[])
+  const [count,setCount] = useState<number>(0)
   return (
     <>
       <h1>React With TypeScript</h1>
+      {count} <br />
+      <button onClick={()=>setCount(count+1)}>increase count</button>
+      <button onClick={()=>setCount(count-1)}>decrease count</button>
       {
         user && <p>Name:{user.name} <br />Email:{user.email}</p>
       }
